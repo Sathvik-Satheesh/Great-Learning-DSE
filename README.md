@@ -1,1 +1,1 @@
-# GL-DSE
+# Great Learning-DSE
