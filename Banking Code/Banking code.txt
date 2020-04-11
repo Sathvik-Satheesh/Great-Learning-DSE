@@ -1,0 +1,54 @@
+def bank_func():
+    val = bank_dict.values()
+    val1 = list(val)
+    key = bank_dict.keys()
+    key1 = list(key)
+    a = bank_dict.keys()
+
+
+    import random
+    cvv = []
+    for item in range(0,5):
+        x = random.randint(100,999)
+        cvv.append(x)
+    cvv1 = cvv
+    
+
+    n = 0
+    d = {}
+    for item in cvv1:
+        h = {val1[n]:{cvv1[n]:{mob1[n]:key1[n]}}}
+        n+=1
+        dict_final = d.update(h)
+    print("The database:\n", d)
+
+bank_dict = {'a1':1234567812345678, 'a2':1234876556784321, 'a3':5678432112348765, 'a4':1526374818273645, 'a5':8765432187654321}
+check = list(bank_dict.values())
+mob1 = [9846583546,9756423433,9756354657,9996576543,9867689857]
+card_num = int(input('Enter your card number: '))
+card_num_str = str(card_num)
+if len(card_num_str)!=16:
+    print("Invalid Card number")
+    
+else:
+    if card_num in check:
+        year = int(input("Enter the year: "))
+        if year < 2020:
+            print("The card has expired.")
+            
+        else:
+            month = int(input("Enter the month: "))
+            if month < 1 or month > 12:
+                print("The card has expired.")
+                
+            else:
+                print("The Card is Approved!\n")
+                mob_num = int(input("Please enter your registered mobile number: "))
+                if mob_num in mob1:
+                    print("Success!")
+                    bank_func()
+                else:
+                    print("The mobile number is not registered with the bank. Please try again.")
+    
+    else:
+        print("Invalid Customer.")
